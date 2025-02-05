@@ -49,21 +49,8 @@
 					return;
 			   }
 			   
-			   var t1;
-			   var u1;
-			   
-			   if(u == "F"){
-					t1 = t * (9/5) + 32;
-					u1 = "Fahrenheit";
-			   }else if(u == "K"){
-					t1 =  t + 273.15;
-					u1 = "Réaumur";
-			   }else if(u == "R"){
-					t1 = t * (4/5);
-					u1 = "Kelvin";
-			   }
-			   
-			   alert("Temperature is "+t1+" in "+u1);
+			   var result=temperature_c(t,u)
+			   alert("Temperature is "+result.temperature_c+" in "+result.unit);
 			});
 		});
 		function alertv() {
@@ -79,6 +66,23 @@
     }
     return null;
 }
+	function temperature_c(t,u) {
+		var t1;
+		var u1;
+		if(u == "F"){
+					t1 = t * (9/5) + 32;
+					u1 = "Fahrenheit";
+			   }else if(u == "K"){
+					t1 =  t + 273.15;
+					u1 = "Réaumur";
+			   }else if(u == "R"){
+					t1 = t * (4/5);
+					u1 = "Kelvin";
+			   }
+	return{
+		temperature_c:t1,unit:u1
+	};		   
+}	   
 </script>
 	
 </body>
